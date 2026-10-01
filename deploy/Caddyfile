@@ -1,0 +1,39 @@
+# Caddy config for montanainstituteofsport.org
+# Lives at /etc/caddy/Caddyfile on the server. Caddy renews HTTPS certificates
+# automatically; nothing here needs touching unless the domain changes.
+
+www.montanainstituteofsport.org {
+	redir https://montanainstituteofsport.org{uri} permanent
+}
+
+montanainstituteofsport.org {
+	root * /var/www/mis
+	encode zstd gzip
+	file_server
+
+	# Old WordPress URLs had no .html and a trailing slash. The slugs below are
+	# best guesses at the old page addresses; check them against the live site
+	# before DNS cutover so old links and Google results still land.
+	try_files {path} {path}.html {path}/index.html
+	redir /about-us /about.html permanent
+	redir /about-us/ /about.html permanent
+	redir /contact-us /contact.html permanent
+	redir /contact-us/ /contact.html permanent
+	redir /our-programs /programs.html permanent
+	redir /our-programs/ /programs.html permanent
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Frame-Options "SAMEORIGIN"
+		-Server
+	}
+	@assets path /images/* /css/* /js/*
+	header @assets Cache-Control "public, max-age=604800"
+
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}

@@ -4,14 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact Us - Montana Institute of Sport</title>
+<meta name="description" content="Get in touch with Montana Institute of Sport — questions about our programs, partnerships, or getting involved.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://montanainstituteofsport.org/contact.html">
+<meta name="theme-color" content="#122049">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Montana Institute of Sport">
+<meta property="og:title" content="Contact Us - Montana Institute of Sport">
+<meta property="og:description" content="Get in touch with Montana Institute of Sport — questions about our programs, partnerships, or getting involved.">
+<meta property="og:url" content="https://montanainstituteofsport.org/contact.html">
+<meta property="og:image" content="https://montanainstituteofsport.org/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="top">
 
-<div class="topbar">DONATE TODAY</div>
+<a class="topbar" href="https://secure.givelively.org/donate/montana-institute-of-sport" target="_blank" rel="noopener">DONATE TODAY</a>
 <header class="siteheader">
   <nav class="nav">
     <a class="brand" href="index.html">
@@ -19,20 +31,21 @@
       <span class="brand-name">MONTANA<br>INSTITUTE OF SPORT</span>
     </a>
     <div class="navlinks">
-      <a href="what-we-do.html">What We do</a>
+      <a href="what-we-do.html">What We Do</a>
       <a href="programs.html">Our Programs</a>
       <a href="partnerships.html">Partnerships</a>
       <a href="about.html">About Us</a>
     </div>
     <div class="nav-ctas">
-      <span class="btn btn-outline">Connect</span>
-      <span class="btn btn-gold">Donate</span>
+      <a href="contact.html" class="btn btn-outline">Connect</a>
+      <a href="https://secure.givelively.org/donate/montana-institute-of-sport" target="_blank" rel="noopener" class="btn btn-gold">Donate</a>
     </div>
   </nav>
 </header>
 
 <div class="contact-split">
   <div class="contact-photo">
+    <img class="hero-bg" src="images/photos/bozeman-sports-park.jpg" alt="Aerial view of the Bozeman Sports Park fields with the mountains behind">
     <div class="contact-photo-inner">
       <h1>Got a question?<br>No problem.</h1>
       <p>Learn more about our mission and what we do.</p>
@@ -42,31 +55,40 @@
         <a href="partnerships.html"><span class="circle">&#8250;</span> Partnerships</a>
       </div>
     </div>
-    <div class="photo-note-tag"><span class="icon">&#128247;</span>Photo needed &mdash; 800&times;640px, candid action shot</div>
   </div>
   <div class="contact-form-side">
     <h2>Let's Work Together</h2>
-    <div class="form-row">
-      <div class="form-field"><label>First</label><input type="text" aria-label="First name"></div>
-      <div class="form-field"><label>Last</label><input type="text" aria-label="Last name"></div>
-    </div>
-    <div class="form-field">
-      <label>Subject</label>
-      <select aria-label="Subject">
-        <option>General Inquiry</option>
-        <option>Sponsorship Opportunities</option>
-        <option>Join The 26 Club</option>
-        <option>Donation Information</option>
-      </select>
-    </div>
-    <div class="form-field"><label>Email</label><input type="email" aria-label="Email"></div>
-    <div class="form-field"><label>Phone</label><input type="tel" aria-label="Phone"></div>
-    <div class="form-field"><label>Message</label><textarea aria-label="Message"></textarea></div>
-    <div class="contact-submit"><span class="btn btn-navy">Submit</span></div>
+    <form action="https://api.web3forms.com/submit" method="POST" data-contact-form>
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="from_name" value="montanainstituteofsport.org">
+      <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <div class="field"><label for="ct-first">First</label><input type="text" id="ct-first" name="first_name" autocomplete="given-name" required></div>
+        <div class="field"><label for="ct-last">Last</label><input type="text" id="ct-last" name="last_name" autocomplete="family-name"></div>
+      </div>
+      <div class="field">
+        <label for="ct-subject">Subject</label>
+        <select id="ct-subject" name="subject">
+          <option>General Inquiry</option>
+          <option>Sponsorship Opportunities</option>
+          <option>Join The 26 Club</option>
+          <option>Donation Information</option>
+        </select>
+      </div>
+      <div class="field"><label for="ct-email">Email</label><input type="email" id="ct-email" name="email" autocomplete="email" required></div>
+      <div class="field"><label for="ct-phone">Phone</label><input type="tel" id="ct-phone" name="phone" autocomplete="tel"></div>
+      <div class="field"><label for="ct-message">Message</label><textarea id="ct-message" name="message" required></textarea></div>
+      <div class="contact-submit"><button type="submit" class="btn btn-navy">Submit</button>
+        <p class="form-status" role="status" aria-live="polite"></p></div>
+    </form>
   </div>
 </div>
 
 <div class="footer">
+  <svg class="watermark" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M200 30 L370 350 L30 350 Z" stroke="#fff" stroke-width="5"/>
+    <path d="M145 150 L285 350 L5 350 Z" stroke="#fff" stroke-width="5"/>
+  </svg>
   <div class="wrap">
     <div class="footer-top">
       <div>
@@ -76,14 +98,14 @@
         </div>
         <address>
           124 King Meadows Lane,<br>Bozeman, MT, 59718<br><br>
-          (314) 954-7194<br>
-          jstephenson@montanainstituteofsport.org
+          <a href="tel:+13149547194">(314) 954-7194</a><br>
+          <a href="mailto:jstephenson@montanainstituteofsport.org">jstephenson@montanainstituteofsport.org</a>
         </address>
       </div>
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="what-we-do.html">What We do</a></li>
+          <li><a href="what-we-do.html">What We Do</a></li>
           <li><a href="programs.html">Our Programs</a></li>
           <li><a href="partnerships.html">Partnerships</a></li>
           <li><a href="about.html">About Us</a></li>
@@ -93,16 +115,18 @@
         <h4>Get Involved</h4>
         <ul>
           <li><a href="contact.html">Connect</a></li>
-          <li><a href="#">Donate</a></li>
+          <li><a href="https://secure.givelively.org/donate/montana-institute-of-sport" target="_blank" rel="noopener">Donate</a></li>
           <li><a href="partnerships.html">The 26 Club</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 Montana Institute of Sport.
+      <span>&copy; 2026 Montana Institute of Sport.</span>
+      <a class="back-to-top" href="#top">Back to top <span>&#8593;</span></a>
     </div>
   </div>
 </div>
 
+<script src="js/site.js" defer></script>
 </body>
 </html>

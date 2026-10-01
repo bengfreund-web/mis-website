@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRY Rugby: Statewide Impact - Montana Institute of Sport</title>
+<meta name="description" content="Which Montana schools TRY Rugby has reached, how many students that is, and what it would cost to reach the rest — school by school.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://montanainstituteofsport.org/try-rugby-impact.html">
+<meta name="theme-color" content="#122049">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Montana Institute of Sport">
+<meta property="og:title" content="TRY Rugby: Statewide Impact - Montana Institute of Sport">
+<meta property="og:description" content="Which Montana schools TRY Rugby has reached, how many students that is, and what it would cost to reach the rest — school by school.">
+<meta property="og:url" content="https://montanainstituteofsport.org/try-rugby-impact.html">
+<meta property="og:image" content="https://montanainstituteofsport.org/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/try-rugby-impact.css">
+</head>
+<body id="top">
+
+<a class="topbar" href="https://secure.givelively.org/donate/montana-institute-of-sport" target="_blank" rel="noopener">DONATE TODAY</a>
+<header class="siteheader">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="images/logo-icon.png" alt="Montana Institute of Sport">
+      <span class="brand-name">MONTANA<br>INSTITUTE OF SPORT</span>
+    </a>
+    <div class="navlinks">
+      <a href="what-we-do.html">What We Do</a>
+      <a href="programs.html" class="active">Our Programs</a>
+      <a href="partnerships.html">Partnerships</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-ctas">
+      <a href="contact.html" class="btn btn-outline">Connect</a>
+      <a href="https://secure.givelively.org/donate/montana-institute-of-sport" target="_blank" rel="noopener" class="btn btn-gold">Donate</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Everything below is scoped under .tri; see css/try-rugby-impact.css -->
+<div class="tri">
+  <header class="top">
+    <div class="wrap">
+      <div class="brand">TRY Rugby <span>/ Statewide Impact</span></div>
+      <nav class="jump" aria-label="Sections">
+        <a href="#reach">Reach</a><a href="#momentum">Momentum</a><a href="#map">Map</a>
+        <a href="#levels">Levels</a><a href="#opportunity">Opportunity</a><a href="#explore">Every school</a>
+        <a href="#" id="printLink">Print / PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Statewide school tracker &middot; 2023/24 &ndash; 2025/26</div>
+      <h1>Rugby has reached <em id="hdrStudents">69,459</em> Montana students. <em id="hdrRemain">82,967</em> are still waiting.</h1>
+      <p class="lede"><strong>We've reached more than one in four Montana schools, and close to half of all Montana students</strong>, because we went to the big ones first. Each square below is one school.</p>
+
+      <div class="gridcard">
+        <div class="bar">
+          <div class="eyebrow">Every tracked school, largest enrollment first</div>
+          <div class="readout" id="readout">Hover a square for the school.</div>
+        </div>
+        <div class="schoolgrid" id="grid" aria-hidden="true"></div>
+        <p class="sr" id="gridSummary"></p>
+        <div class="legend" id="legend"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reach">
+    <div class="wrap">
+      <div class="sechead">
+        <h2>Reached</h2>
+      </div>
+      <div class="cov" id="covBar" role="img" aria-label="Share of tracked students by program stage"></div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </section>
+
+  <section id="momentum">
+    <div class="wrap">
+      <div class="sechead"><h2>Momentum</h2>
+        <p class="note">Schools logged as completing a TRY Rugby session, by school year. Earlier years are less completely recorded, so some of the rise is better record-keeping rather than growth.</p></div>
+      <div class="card">
+        <h3>TRY Rugby sessions by school year</h3>
+        <p class="sub">In-person coaching delivered into a school's PE program.</p>
+        <div id="yearBars"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="map">
+    <div class="wrap">
+      <div class="sechead"><h2>Where we've been</h2>
+        <p class="note">One dot per community, sized by the number of students in its schools. Filled portion shows how much of that community we've reached.</p></div>
+      <div class="mapwrap"><svg class="map" id="mtmap" viewBox="0 0 900 512" role="img" aria-label="Map of Montana showing communities reached by TRY Rugby"></svg></div>
+    </div>
+  </section>
+
+  <section id="levels">
+    <div class="wrap">
+      <div class="sechead"><h2>Reach by school level</h2></div>
+      <div class="cols">
+        <div class="card"><h3>Schools reached</h3><p class="sub">Of all tracked schools at that level.</p><div id="bandBars"></div></div>
+        <div class="card"><h3>Students reached</h3><p class="sub">Enrollment at reached schools, of all tracked enrollment at that level.</p><div id="bandBarsE"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="opportunity">
+    <div class="wrap">
+      <div class="sechead"><h2>What's still on the table</h2>
+        <p class="note">Move the slider to see what a given number of new school deliveries would reach, targeting the largest unreached schools first.</p></div>
+      <div class="cols3">
+        <div class="card">
+          <h3>What a gift unlocks</h3>
+          <p class="sub">Next schools are drawn from the unreached list, largest enrollment first.</p>
+          <div class="calc">
+            <div class="field">
+              <label for="nSchools">New schools delivered: <span class="mono" id="nOut">25</span></label>
+              <input type="range" id="nSchools" min="1" max="200" value="25" step="1">
+            </div>
+            <div class="field">
+              <label for="cost">Your cost per school (USD)</label>
+              <input type="number" id="cost" value="1500" min="0" step="50">
+            </div>
+          </div>
+          <div class="result">
+            <div><div class="v" id="calcStudents">&mdash;</div><div class="k">Students reached</div></div>
+            <div><div class="v" id="calcCost">&mdash;</div><div class="k">Total investment</div></div>
+            <div><div class="v" id="calcPer">&mdash;</div><div class="k">Cost per student</div></div>
+          </div>
+          <p class="assume">The cost figure is a placeholder. Replace it with MIS's real per-school delivery cost before this goes in front of a donor.</p>
+        </div>
+        <div class="card">
+          <h3>Finish a region</h3>
+          <p class="sub">What it takes to reach every remaining school in one club's area.</p>
+          <div class="field">
+            <label for="fundRegion">Club region</label>
+            <select id="fundRegion" style="width:100%"></select>
+          </div>
+          <div class="result">
+            <div><div class="v" id="fundSchools">&mdash;</div><div class="k">Schools left</div></div>
+            <div><div class="v" id="fundStudents">&mdash;</div><div class="k">Students</div></div>
+            <div><div class="v" id="fundCost">&mdash;</div><div class="k">At the cost above</div></div>
+          </div>
+          <p class="assume" id="fundNote"></p>
+        </div>
+        <div class="card">
+          <h3>Biggest unreached schools</h3>
+          <p class="sub">Highest enrollment, no delivery and nothing scheduled.</p>
+          <ol class="targets" id="targets"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="explore">
+    <div class="wrap">
+      <div class="sechead"><h2>Every school</h2>
+        <p class="note">Search and filter the full tracker. The grid at the top of the page follows these filters.</p></div>
+      <div class="controls">
+        <input type="search" id="q" placeholder="Search school or town" aria-label="Search school or town">
+        <select id="fCatch" aria-label="Filter by catchment"><option value="">All catchments</option></select>
+        <select id="fBand" aria-label="Filter by level"><option value="">All levels</option></select>
+        <select id="fStage" aria-label="Filter by stage"><option value="">All stages</option></select>
+        <button class="btn ghost" id="reset">Reset</button>
+        <button class="btn" id="csv">Download CSV</button>
+      </div>
+      <p class="readout" id="tableCount"></p>
+      <div class="tablewrap">
+        <table id="tbl">
+          <thead><tr>
+            <th data-k="n">School</th><th data-k="c">Town</th><th data-k="k">Catchment</th>
+            <th data-k="b">Level</th><th data-k="s">Stage</th><th data-k="e" class="r">Enrollment</th>
+          </tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Montana Institute of Sport</div>
+        <p style="margin-top:8px;max-width:46ch">TRY Rugby is delivered free to Montana schools. To bring it to a school, or to fund a catchment, contact <a href="mailto:jstephenson@montanainstituteofsport.org">jstephenson@montanainstituteofsport.org</a>.</p>
+      </div>
+      <div>
+        <div class="eyebrow">This page</div>
+        <p style="margin-top:8px">Built from the TRY Rugby master sheet. Figures update when the sheet is re-exported and the page rebuilt.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="tip" id="tip" role="status" aria-live="polite"></div>
+</div>
+
+<div class="footer">
+  <svg class="watermark" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M200 30 L370 350 L30 350 Z" stroke="#fff" stroke-width="5"/>
+    <path d="M145 150 L285 350 L5 350 Z" stroke="#fff" stroke-width="5"/>
+  </svg>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="images/logo-icon.png" alt="Montana Institute of Sport">
+          <span>MONTANA INSTITUTE<br>OF SPORT</span>
+        </div>
+        <address>
+          124 King Meadows Lane,<br>Bozeman, MT, 59718<br><br>
+          <a href="tel:+13149547194">(314) 954-7194</a><br>
+          <a href="mailto:jstephenson@montanainstituteofsport.org">jstephenson@montanainstituteofsport.org</a>
+        </address>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="what-we-do.html">What We Do</a></li>
+          <li><a href="programs.html">Our Programs</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="contact.html">Connect</a></li>
+          <li><a href="https://secure.givelively.org/donate/montana-institute-of-sport" target="_blank" rel="noopener">Donate</a></li>
+          <li><a href="partnerships.html">The 26 Club</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Montana Institute of Sport.</span>
+      <a class="back-to-top" href="#top">Back to top <span>&#8593;</span></a>
+    </div>
+  </div>
+</div>
+
+<script src="js/site.js" defer></script>
+<script src="js/try-rugby-impact.js" defer></script>
+</body>
+</html>
