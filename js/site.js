@@ -11,7 +11,7 @@
   var heroNav = document.querySelector(".hero-content .nav");
   if (heroNav) {
     var toggleScrolled = function(){
-      if (window.scrollY > 40) {
+      if ((window.scrollY || document.documentElement.scrollTop) > 40) {
         document.body.classList.add("is-scrolled");
       } else {
         document.body.classList.remove("is-scrolled");
