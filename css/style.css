@@ -63,7 +63,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .brand img{height:42px; width:auto; display:block;}
 .brand-name{font-family:'Poppins',sans-serif; font-weight:700; font-size:12.5px; letter-spacing:0.045em; color:#fff; line-height:1.4;}
 .navlinks{display:flex; align-items:center; gap:32px;}
-.navlinks a{color:#fff; font-size:13px; font-weight:600; letter-spacing:0.03em; text-decoration:none; padding-bottom:3px; border-bottom:1px solid transparent; opacity:0.82;}
+.navlinks a{white-space:nowrap; color:#fff; font-size:13px; font-weight:600; letter-spacing:0.03em; text-decoration:none; padding-bottom:3px; border-bottom:1px solid transparent; opacity:0.82;}
 .navlinks a:hover{opacity:1; border-bottom-color:var(--gold);}
 .navlinks a.active{border-bottom-color:var(--gold); opacity:1;}
 .nav-ctas{display:flex; align-items:center; gap:14px;}
@@ -310,6 +310,11 @@ body.is-scrolled .hero-content .nav + .hero-text{margin-top:0;}
 .form-row{display:grid; grid-template-columns:1fr 1fr; gap:0 20px;}
 
 /* ---------- RESPONSIVE ---------- */
+@media (max-width: 1100px) and (min-width: 901px){
+  .navlinks{gap:20px;}
+  .nav-ctas{gap:10px;}
+  .nav-ctas .btn{padding-left:16px; padding-right:16px;}
+}
 @media (max-width: 900px){
   .wrap{padding:0 24px;}
   .nav{padding:18px 24px; flex-wrap:wrap; gap:16px;}
