@@ -80,8 +80,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* Hero nav sits transparent over the photo/pattern until the page scrolls */
 .hero .nav{padding:28px 40px 0;}
-body.is-scrolled .hero-content .nav{position:fixed; top:0; left:0; right:0; padding:16px 40px; background:var(--navy-deep); box-shadow:0 8px 30px rgba(0,0,0,0.22); z-index:50;}
-body.is-scrolled .hero-content .nav + .hero-text{margin-top:0;}
 
 /* ---------- BUTTONS — every CTA is a real link/button with a forward nudge ---------- */
 .btn{

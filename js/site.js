@@ -7,20 +7,6 @@
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* Nav goes solid once the page scrolls past the hero */
-  var heroNav = document.querySelector(".hero-content .nav");
-  if (heroNav) {
-    var toggleScrolled = function(){
-      if ((window.scrollY || document.documentElement.scrollTop) > 40) {
-        document.body.classList.add("is-scrolled");
-      } else {
-        document.body.classList.remove("is-scrolled");
-      }
-    };
-    toggleScrolled();
-    window.addEventListener("scroll", toggleScrolled, { passive: true });
-  }
-
   /* Gentle fade/rise-in for content as it enters the viewport */
   var revealables = document.querySelectorAll(".reveal, .reveal-stagger");
   if (revealables.length) {
